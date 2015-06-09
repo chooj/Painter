@@ -1,2 +1,2 @@
 # Painter
-Painting program.
+Painting program
