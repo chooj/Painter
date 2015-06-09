@@ -1,0 +1,407 @@
+// size
+float s = 3;
+// pallets
+float palletY = 475;
+float changeX = 675;
+// colors
+float r1 = 255;
+float r2 = 50;
+float r3 = 50;
+float o1 = 255;
+float o2 = 125;
+float o3 = 50;
+float y1 = 255;
+float y2 = 255;
+float y3 = 50;
+float g1 = 50;
+float g2 = 255;
+float g3 = 50;
+float b1 = 50;
+float b2 = 50;
+float b3 = 255;
+float p1 = 255;
+float p2 = 50;
+float p3 = 255;
+float bl1 = 0;
+float bl2 = 0;
+float bl3 = 0;
+color r = color(r1, r2, r3);
+color o = color(o1, o2, o3);
+color y = color(y1, y2, y3);
+color g = color(g1, g2, g3);
+color b = color(b1, b2, b3);
+color p = color(p1, p2, p3);
+color bl = color(bl1, bl2, bl3);
+color c = bl;
+// clear color
+color clearColor = color(200, 200, 200);
+// booleans!
+boolean ableToRx = true;
+boolean ableToOx = true;
+boolean ableToYx = true;
+boolean ableToGx = true;
+boolean ableToBx = true;
+boolean ableToPx = true;
+boolean ableToBlx = true;
+boolean ableToRy = true;
+boolean ableToOy = true;
+boolean ableToYy = true;
+boolean ableToGy = true;
+boolean ableToBy = true;
+boolean ableToPy = true;
+boolean ableToBly = true;
+// font
+PFont font = createFont("Avenir-Black", 25);
+
+void change() {
+  noStroke();
+  fill(200, 200, 200);
+  rect(changeX, 0, 125, 600);
+  fill(230, 230, 230);
+  rect(changeX + 33, 25, 60, 30);
+  rect(changeX + 33, 60, 60, 30);
+  rect(changeX + 33, 100, 60, 60);
+  rect(changeX + 33, 175, 60, 60);
+  rect(changeX + 33, 250, 60, 60);
+  rect(changeX + 33, 325, 60, 60);
+  rect(changeX + 33, 400, 60, 60);
+  fill(0, 0, 0);
+  ellipse(changeX + 63, 130, 3, 3);
+  ellipse(changeX + 63, 205, 6, 6);
+  ellipse(changeX + 63, 280, 10, 10);
+  ellipse(changeX + 63, 355, 15, 15);
+  ellipse(changeX + 63, 430, 20, 20);
+  ellipse(changeX + 78, 40, 15, 15);
+  ellipse(changeX + 78, 75, 5, 5);
+  stroke(0, 0, 0);
+  strokeWeight(3);
+  line(changeX + 53, 32, changeX + 53, 46);
+  line(changeX + 45, 39, changeX + 61, 39);
+  line(changeX + 45, 74, changeX + 61, 74);
+}
+
+void pallet() {
+  noStroke();
+  fill(200, 200, 200);
+  rect(0, palletY, 800, 125);
+  stroke(100, 100, 100);
+  strokeWeight(2);
+  rect(50, palletY + 21, 605, 80);
+  noStroke();
+  fill(255, 50, 50);
+  rect(52, palletY + 23, 86, 77);
+  fill(255, 125, 50);
+  rect(138, palletY + 23, 86, 77);
+  fill(255, 255, 50);
+  rect(224, palletY + 23, 86, 77);
+  fill(50, 255, 50);
+  rect(310, palletY + 23, 86, 77);
+  fill(50, 50, 255);
+  rect(396, palletY + 23, 86, 77);
+  fill(255, 50, 255);
+  rect(482, palletY + 23, 86, 77);
+  fill(0, 0, 0);
+  rect(568, palletY + 23, 86, 77);
+  fill(230, 230, 230);
+  rect(690, palletY + 23, 80, 30);
+  rect(690, palletY + 65, 80, 30);
+  fill(255, 255, 255);
+  ellipse(750, palletY + 37, 15, 15);
+  fill(0, 0, 0);
+  ellipse(750, palletY + 79, 15, 15);
+  stroke(0, 0, 0);
+  strokeWeight(3);
+  line(721, palletY + 30, 721, palletY + 45);
+  line(713, palletY + 37, 729, palletY + 37);
+  line(713, palletY + 79, 729, palletY + 79);
+}
+
+void reset() {
+  noStroke();
+  fill(255, 255, 255);
+  rect(0, 0, 800, 600);
+  r1 = 255;
+  r2 = 50;
+  r3 = 50;
+  o1 = 255;
+  o2 = 125;
+  o3 = 50;
+  y1 = 255;
+  y2 = 255;
+  y3 = 50;
+  g1 = 50;
+  g2 = 255;
+  g3 = 50;
+  b1 = 50;
+  b2 = 50;
+  b3 = 255;
+  p1 = 255;
+  p2 = 50;
+  p3 = 255;
+  bl1 = 0;
+  bl2 = 0;
+  bl3 = 0;
+}
+
+void setup() {
+  background(255, 255, 255);
+  size(800, 600);
+  // colors
+  r = color(r1, r2, r3);
+  o = color(o1, o2, o3);
+  y = color(y1, y2, y3);
+  g = color(g1, g2, g3);
+  b = color(b1, b2, b3);
+  p = color(p1, p2, p3);
+  bl = color(bl1, bl2, bl3);
+}
+
+void draw() {
+  frameRate(999999999);
+
+  // ableTo
+  if (r2 > 95) {
+    ableToRy = false;
+  } else {
+    ableToRy = true;
+  }
+  if (r1 < 15) {
+    ableToRx = false;
+  } else {
+    ableToRx = true;
+  }
+  if (o3 > 95) {
+    ableToOy = false;
+  } else {
+    ableToOy = true;
+  }
+  if (o2 < 15) {
+    ableToOx = false;
+  } else {
+    ableToOx = true;
+  }
+  if (y1 > 250) {
+    ableToYy = false;
+  } else {
+    ableToYy = true;
+  }
+  if (y1 < 15) {
+    ableToYx = false;
+  } else {
+    ableToYx = true;
+  }
+  if (g2 > 250) {
+    ableToGy = false;
+  } else {
+    ableToGy = true;
+  }
+  if (g2 < 15) {
+    ableToGx = false;
+  } else {
+    ableToGx = true;
+  }
+  if (b3 > 250) {
+    ableToBy = false;
+  } else {
+    ableToBy = true;
+  }
+  if (b3 < 15) {
+    ableToBx = false;
+  } else {
+    ableToBx = true;
+  }
+  if (p1 > 250) {
+    ableToPy = false;
+  } else {
+    ableToPy = true;
+  }
+  if (p1 < 15) {
+    ableToPx = false;
+  } else {
+    ableToPx = true;
+  }
+  if (bl1 > 250) {
+    ableToBly = false;
+  } else {
+    ableToBly = true;
+  }
+  if (bl1 < 5) {
+    ableToBlx = false;
+  } else {
+    ableToBlx = true;
+  }
+
+  // drawing
+  if (mousePressed) {
+    if (c == r) {
+      stroke(r1, r2, r3);
+    }
+    if (c == o) {
+      stroke(o1, o2, o3);
+    }
+    if (c == y) {
+      stroke(y1, y2, y3);
+    }
+    if (c == g) {
+      stroke(g1, g2, g3);
+    }
+    if (c == b) {
+      stroke(b1, b2, b3);
+    }
+    if (c == p) {
+      stroke(p1, p2, p3);
+    }
+    if (c == bl) {
+      stroke(bl1, bl2, bl3);
+    }
+    strokeWeight(s);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+
+  // pallets
+  change();
+  pallet();
+
+  // clear
+  noStroke();
+  fill(255);
+  rect(18, 16, 80, 30);
+  fill(clearColor);
+  textFont(font);
+  text("CLEAR", 20, 40);
+  if (mouseX > 18 && mouseX < 98 && mouseY > 16 && mouseY < 46) {
+    clearColor = color(0);
+  } else {
+    clearColor = color(200);
+  }
+}
+
+void mousePressed() {
+  // clearing
+  if (mouseX > 18 && mouseX < 98 && mouseY > 16 && mouseY < 46) {
+    noStroke();
+    fill(255, 255, 255);
+    rect(0, 0, 675, 475);
+  }
+
+  // changing color
+  if (mouseX > 52 && mouseX < 138 && mouseY > 498 && mouseY < 575) {
+    c = r;
+  }
+  if (mouseX > 138 && mouseX < 224 && mouseY > 498 && mouseY < 575) {
+    c = o;
+  }
+  if (mouseX > 224 && mouseX < 310 && mouseY > 498 && mouseY < 575) {
+    c = y;
+  }
+  if (mouseX > 310 && mouseX < 396 && mouseY > 498 && mouseY < 575) {
+    c = g;
+  }
+  if (mouseX > 396 && mouseX < 482 && mouseY > 498 && mouseY < 575) {
+    c = b;
+  }
+  if (mouseX > 482 && mouseX < 568 && mouseY > 498 && mouseY < 575) {
+    c = p;
+  }
+  if (mouseX > 568 && mouseX < 654 && mouseY > 498 && mouseY < 575) {
+    c = bl;
+  }
+  if (mouseX > 690 && mouseX < 770 && mouseY > 498 && mouseY < 528) {
+    if (c == r && ableToRy == true) {
+      r1 = r1 + 5;
+      r2 = r2 + 5;
+      r3 = r3 + 5;
+    }
+    if (c == o && ableToOy == true) {
+      o1 = o1 + 5;
+      o2 = o2 + 5;
+      o3 = o3 + 5;
+    }
+    if (c == y && ableToYy == true) {
+      y1 = y1 + 5;
+      y2 = y2 + 5;
+      y3 = y3 + 5;
+    }
+    if (c == g && ableToGy == true) {
+      g1 = g1 + 5;
+      g2 = g2 + 5;
+      g3 = g3 + 5;
+    }
+    if (c == b && ableToBy == true) {
+      b1 = b1 + 5;
+      b2 = b2 + 5;
+      b3 = b3 + 5;
+    }
+    if (c == p && ableToPy == true) {
+      p1 = p1 + 5;
+      p2 = p2 + 5;
+      p3 = p3 + 5;
+    }
+    if (c == bl && ableToBly == true) {
+      bl1 = bl1 + 5;
+      bl2 = bl2 + 5;
+      bl3 = bl3 + 5;
+    }
+  }
+  if (mouseX > 690 && mouseX < 770 && mouseY > 540 && mouseY < 570) {
+    if (c == r && ableToRx == true) {
+      r1 = r1 - 5;
+      r2 = r2 - 5;
+      r3 = r3 - 5;
+    }
+    if (c == o && ableToOx == true) {
+      o1 = o1 - 5;
+      o2 = o2 - 5;
+      o3 = o3 - 5;
+    }
+    if (c == y && ableToYx == true) {
+      y1 = y1 - 5;
+      y2 = y2 - 5;
+      y3 = y3 - 5;
+    }
+    if (c == g && ableToGx == true) {
+      g1 = g1 - 5;
+      g2 = g2 - 5;
+      g3 = g3 - 5;
+    }
+    if (c == b && ableToBx == true) {
+      b1 = b1 - 5;
+      b2 = b2 - 5;
+      b3 = b3 - 5;
+    }
+    if (c == p && ableToPx == true) {
+      p1 = p1 - 5;
+      p2 = p2 - 5;
+      p3 = p3 - 5;
+    }
+    if (c == bl && ableToBlx == true) {
+      bl1 = bl1 - 5;
+      bl2 = bl2 - 5;
+      bl3 = bl3 - 5;
+    }
+  }
+
+
+  // changing size
+  if (mouseX > 708 && mouseX < 768 && mouseY > 25 && mouseY < 68 && s < 25) {
+    s = s + 1;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 60 && mouseY < 83 && s > 3) {
+    s = s - 1;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 100 && mouseY < 160) {
+    s = 3;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 175 && mouseY < 235) {
+    s = 6;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 250 && mouseY < 310) {
+    s = 10;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 325 && mouseY < 385) {
+    s = 15;
+  }
+  if (mouseX > 708 && mouseX < 768 && mouseY > 400 && mouseY < 460) {
+    s = 20;
+  }
+}
